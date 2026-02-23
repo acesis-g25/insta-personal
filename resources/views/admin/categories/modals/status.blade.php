@@ -14,17 +14,14 @@
                 <form action="{{route('admin.categories.update', $category->id)}}" method="POST">
                     @csrf
                     @method('PATCH')
-
                     <div class="modal-body">
                         <div class="mt-3">
                             <input type="text" name="name" class="form-control" value="{{ old('name', $category->name)}}" required>
                         </div>
                     </div>
                     <div class="modal-footer border-0">
-
                         <button type="button" class="btn btn-outline-warning btn-sm" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-warning btn-sm">Update</button>
-                       
+                        <button type="submit" class="btn btn-warning btn-sm">Update</button>                      
                     </div>
                 </form>    
         </div>
@@ -40,7 +37,7 @@
                 </h3>
             </div>
             <div class="modal-body">
-               <p>Are you sure you want to delte {{ $category->name }} category?</p> 
+               <p>Are you sure you want to delete {{ $category->name }} category?</p> 
                <p>This action will affect all the posts under this category. Posts without a category will fallunder Uncategorized</p>
             </div>
                

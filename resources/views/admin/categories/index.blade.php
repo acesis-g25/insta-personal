@@ -40,7 +40,6 @@
             <td>{{$category->updated_at}}</td>
             <td>
                 <button class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#update-category-{{$category->id}}"><i class="fa-solid fa-pen"></i></button>
-
                 <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}"><i class="fa-regular fa-trash-can"></i></button>
             </td>
             @include('admin.categories.modals.status')
@@ -51,7 +50,6 @@
     @foreach ($all_categories as $category)
         {{-- ... 既存のカテゴリー表示行 ... --}}
     @endforeach
-
     {{-- ここから Uncategorized 行を手動で追加 --}}
     <tr>
         <td>0</td> {{-- IDは便宜上0などにします --}}

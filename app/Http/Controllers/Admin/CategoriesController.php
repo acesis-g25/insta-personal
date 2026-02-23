@@ -23,7 +23,7 @@ class CategoriesController extends Controller
          //withTrashed() will include the soft deleted records in a query result.
         // カテゴリーがNULL（未設定）の投稿をカウント
         // 中間テーブル(category_post)に紐付けがない投稿をカウント
-    $uncategorized_count = Post::doesntHave('categoryPost')->count();
+    $uncategorized_count = Post::withTrashed()->doesntHave('categoryPost')->count();
 
     return view('admin.categories.index')
         ->with('all_categories', $all_categories)
